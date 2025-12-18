@@ -108,7 +108,7 @@ class NameSiloClient:
             _domain = domain['domain'] if domain['host'] == '@' or \
                                           domain['host'] == '' else f"{domain['host']}.{domain['domain']}"
             for record in r:
-                if record.find(f'<host>{_domain}</host>') != -1 and record.find(f'<type>{t}</type>') != -1:
+                if record.find(f'<host>{domain["host"]}</host>') != -1 and record.find(f'<type>{t}</type>') != -1:
                     r = record
                     break
             if type(r) == list:
